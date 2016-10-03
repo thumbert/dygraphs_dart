@@ -3,18 +3,31 @@
 
 library dygraphs_dart_example;
 
+import 'dart:math';
 import 'dart:html';
 import 'package:dygraphs_dart/dygraphs_dart.dart';
 
-import '../data.dart';
-
 
 main() {
-  Element div = (querySelector('#graphdiv'));
+
+  List data = [];
+  for (int i=0; i < 1000; i++) {
+    var base = 10 * sin(i/90);
+    data.add([i, base, base + sin(i/2)]);
+  }
+  // shift one portion out of line
+  var highlight_start = 450;
+  var highlight_end = 500;
+  for (var i = highlight_start; i <= highlight_end; i++) {
+    data[i][2] += 5.0;
+  }
+
 
   Option opt = new Option(
-      title: 'Daily Temperatures in New York vs. San Francisco',
-      ylabel: 'Temperature (F)',
-      showRangeSelector: true);
-  new Dygraph(div, data_temp(), opt);
+      labels: ['X', 'Est.', 'Actual'],
+      animatedZooms: true);
+
+  new Dygraph(querySelector('#graphdiv'),
+      data,
+      opt);
 }

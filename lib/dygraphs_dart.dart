@@ -15,7 +15,10 @@ import "package:js/js.dart";
 
 @JS()
 class Dygraph {
-  external Dygraph(Element div, String data, Option option);
+  /// [data] can be a list or a string.  If it is a string, it needs
+  /// to be formatted like this 'timestamp,value1,value2\n', first row
+  /// can be column names.  See http://dygraphs.com/data.html
+  external Dygraph(Element div, dynamic data, Option option);
 }
 
 @anonymous
@@ -25,6 +28,8 @@ class Option {
     String title,
     String xlabel,
     String ylabel,
+    List<String> labels,
+    bool animatedZooms,
     bool showRangeSelector
   });
   external String get title;
@@ -33,6 +38,10 @@ class Option {
   external set xlabel(String v);
   external String get ylabel;
   external set ylabel(String v);
+  external List<String> get labels;
+  external set labels(List<String> v);
+  external bool get animatedZooms;
+  external set animatedZooms(bool v);
   external bool get showRangeSelector;
   external set showRangeSelector(bool v);
 }
@@ -40,4 +49,3 @@ class Option {
 
 //export 'src/dygraphs_dart_base.dart';
 
-// TODO: Export any libraries intended for clients of this package.
