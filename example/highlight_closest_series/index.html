@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dygraphs and Dart interop example</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/dygraph/1.1.1/dygraph-combined.js"></script>
+    <script type="application/dart" src="highlight_closest_series.dart"></script>
+    <script src="packages/browser/dart.js"></script>
+</head>
+<style type='text/css'>
+  .many .dygraph-legend > span { display: none; }
+  .many .dygraph-legend > span.highlight { display: inline; }
+</style>
+<body>
+<div id="graphdiv" style="width:1000px; height:500px;"></div>
+<p>Push the mouse down and highlight a region for zooming in.  Double-click to zoom back out.</p>
+<p>Example of the Dart API for <a href="https://dygraphs.com/">dygraphs js</a></p>
+
+</body>
+</html>

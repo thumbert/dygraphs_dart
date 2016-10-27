@@ -29,7 +29,9 @@ class Option {
     String xlabel,
     String ylabel,
     List<String> labels,
+    Map highlightSeriesOpts,
     bool animatedZooms,
+    bool showLabelsOnHighlight,
     bool showRangeSelector
   });
   external String get title;
@@ -40,8 +42,12 @@ class Option {
   external set ylabel(String v);
   external List<String> get labels;
   external set labels(List<String> v);
+  external Map get highlightSeriesOpts;
+  external set highlightSeriesOpts(Map v);
   external bool get animatedZooms;
   external set animatedZooms(bool v);
+  external bool get showLabelsOnHighlight;
+  external set showLabelsOnHighlight(bool v);
   external bool get showRangeSelector;
   external set showRangeSelector(bool v);
 }
