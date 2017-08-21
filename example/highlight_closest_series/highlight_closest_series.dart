@@ -34,10 +34,10 @@ main() {
   Option opt = new Option(
       animatedZooms: true,
       highlightSeriesOpts: new HighlightSeriesOpts(
-          pointSize: 30,
+          pointSize: 2,
           strokeWidth: 2,
           strokeBorderWidth: 10,
-          highlightCircleSize: 3),
+          highlightCircleSize: 0),
       interactionModel: new InteractionModel(click: allowInterop(clickFun)),
       showLabelsOnHighlight: false
       );
