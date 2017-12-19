@@ -45,8 +45,10 @@ class Option {
   ///    the X-axis value range to ensure points at the edges remain visible.
   external factory Option(
       {bool animatedZooms,
+      bool connectSeparatedPoints,
       bool customBars,
       bool drawGrid,
+      bool drawPoints,
       List<String> labels,
       String legend,
       num height,
@@ -55,11 +57,14 @@ class Option {
       num highlightSeriesBackgroundAlpha,
       HighlightSeriesOpts highlightSeriesOpts,
       InteractionModel interactionModel,
+      bool fillGraph,
+      int pointSize,
       num rollPeriod,
       bool showLabelsOnHighlight,
       bool showRangeSelector,
       bool showRoller,
       bool stackedGraph,
+      bool stepPlot,
       num strokeBorderWidth,
       num strokeWidth,
       String title,
@@ -73,10 +78,14 @@ class Option {
       num yRangePad});
   external bool get animatedZooms;
   external set animatedZooms(bool v);
+  external bool get connectSeparatedPoints;
+  external set connectSeparatedPoints(bool v);
   external bool get customBars;
   external set customBars(bool v);
   external bool get drawGrid;
   external set drawGrid(bool v);
+  external bool get drawPoints;
+  external set drawPoints(bool v);
   external List<String> get labels;
   external set labels(List<String> v);
   external num get height;
@@ -93,6 +102,10 @@ class Option {
   external set interactionModel(InteractionModel v);
   external String get legend;
   external set legend(String v);
+  external bool get fillGraph;
+  external set fillGraph(bool v);
+  external int get pointSize;
+  external set pointSize(int v);
   external num get rollPeriod;
   external set rollPeriod(num v);
   external bool get showRangeSelector;
@@ -103,6 +116,8 @@ class Option {
   external set showLabelsOnHighlight(bool v);
   external bool get showRoller;
   external set showRoller(bool v);
+  external bool get stepPlot;
+  external set stepPlot(bool v);
   external num get strokeBorderWidth;
   external set strokeBorderWidth(num v);
   external num get strokeWidth;
@@ -152,14 +167,13 @@ class HighlightSeriesOpts {
 @anonymous
 @JS()
 class InteractionModel {
-  external factory InteractionModel({
-    Function mouseDown,
-    Function mouseMove,
-    Function mouseUp,
-    Function click,
-    Function dblClick,
-    Function mouseWheel
-  });
+  external factory InteractionModel(
+      {Function mouseDown,
+      Function mouseMove,
+      Function mouseUp,
+      Function click,
+      Function dblClick,
+      Function mouseWheel});
   external Function get mouseDown;
   external set mouseDown(Function v);
   external Function get mouseMove;

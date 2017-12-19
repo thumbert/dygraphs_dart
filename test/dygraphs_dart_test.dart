@@ -4,8 +4,8 @@
 import 'package:dygraphs_dart/dygraphs_dart.dart';
 import 'package:test/test.dart';
 
-void main() {
-  group('A group of tests', () {
 
-  });
+
+
+void main() {
 }
