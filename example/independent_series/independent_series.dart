@@ -15,11 +15,12 @@ main() {
     [6, 4, null]
   ];
 
+  /// DateTime are not converted correctly.  Need to construct a String.
   List y = [
-    [new DateTime(2015), 15],
-    [new DateTime(2016), 25],
-    [new DateTime(2017), 35],
-    [new DateTime(2018), 39],
+    [new DateTime(2015).toIso8601String(), 15],
+    [new DateTime(2016).toIso8601String(), 25],
+    [new DateTime(2017).toIso8601String(), 35],
+    [new DateTime(2018).toIso8601String(), 39],
   ];
 
   Option opt = new Option(
@@ -29,5 +30,5 @@ main() {
     xRangePad: 3,
     yRangePad: 3
   );
-  new Dygraph(div, y, opt);
+  new Dygraph(div, x, opt);
 }
